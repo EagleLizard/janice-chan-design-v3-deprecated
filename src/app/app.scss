@@ -1,3 +1,15 @@
+@import '../global';
+
 .jc-app {
-  
+  .top-nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+  }
+  .app-content {
+    margin-top: $nav-height;
+  }
 }

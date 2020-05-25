@@ -1,0 +1,39 @@
+
+@import '../../global';
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  height: $nav-height;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #fff;
+
+  .left-logo {
+    height: 100%;
+    img {
+      max-height: 100%;
+    }
+  }
+
+  .page-link-container{
+    display: flex;
+    flex: 1 1;
+    justify-content: flex-end;
+    padding-right: 10px;
+
+    .page-link {
+      @include jc-link;
+      font-weight: 100;
+      font-size: $font-md;
+      padding-left: 20px;
+      transition: color 0.1s;
+      &:hover{
+        color: $link-hover-color;
+      }
+      .link-text{
+        font-weight: 100;
+      }
+    }
+  }
+}
