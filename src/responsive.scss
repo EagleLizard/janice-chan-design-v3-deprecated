@@ -1,0 +1,7 @@
+
+@mixin phone {
+  @media only screen 
+    and (max-device-width: 480px) {
+      @content;
+  }
+}
