@@ -47,11 +47,11 @@ module.exports = (env, argv) => {
     },
     module: {
       rules: [
-        {
-          enforce: "pre",
-          test: /\.js$/,
-          loader: "source-map-loader"
-        },
+        // {
+        //   enforce: "pre",
+        //   test: /\.js$/,
+        //   loader: "source-map-loader"
+        // },
         {
           test: /\.ts(x?)$/,
           exclude: /node_modules/,
