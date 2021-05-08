@@ -1,0 +1,16 @@
+.gallery-tile-row {
+  // height: 33vw;
+  height: 100%;
+  .gallery-preview-row-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    .gallery-preview-container {
+      height: 100%;
+      flex: 1;
+      &:not(:last-child) {
+        padding-right: 10px;
+      }
+    }
+  }
+}

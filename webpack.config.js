@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
       path: DIST_DIR,
       filename: 'bundle.js'
     },
-    devtool: isDevelopment ? 'source-map' : false,
+    devtool: isDevelopment ? 'inline-source-map' : false,
     devServer: {
       contentBase: DIST_DIR,
       historyApiFallback: true,
