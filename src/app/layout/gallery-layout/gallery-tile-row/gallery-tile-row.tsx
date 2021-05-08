@@ -1,11 +1,11 @@
 
 import './gallery-tile-row.scss';
 import React, { useState, useEffect, Ref, useRef, useCallback, MutableRefObject } from 'react';
-import { TileRow, TILE_ROW_TYPES } from '../../services/tile-row';
-import { FullWidthContainer } from '../full-width-container/full-width-container';
-import { Gallery } from '../../../common/images/gallery';
+import { TileRow, TILE_ROW_TYPES } from '../../../services/tile-row';
+import { FullWidthContainer } from '../../full-width-container/full-width-container';
+import { Gallery } from '../../../../common/images/gallery';
 import { GalleryTile } from './gallery-tile/gallery-tile';
-import { PageScrollEvent } from '../../../common/page/page';
+import { PageScrollEvent } from '../../../../common/page/page';
 
 interface GalleryTileRowProps {
   tileRow: TileRow;
