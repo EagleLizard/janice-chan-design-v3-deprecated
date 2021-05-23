@@ -4,8 +4,9 @@ import React, { useState, useEffect, Ref, useRef, useCallback, MutableRefObject 
 import { TileRow, TILE_ROW_TYPES } from '../../../services/tile-row';
 import { FullWidthContainer } from '../../full-width-container/full-width-container';
 import { Gallery } from '../../../../common/images/gallery';
-import { GalleryTile } from './gallery-tile/gallery-tile';
+import { GalleryTile } from '../gallery-tile/gallery-tile';
 import { PageScrollEvent } from '../../../../common/page/page';
+import { GalleryPreview } from '../gallery-preview/gallery-preview';
 
 interface GalleryTileRowProps {
   tileRow: TileRow;
@@ -53,14 +54,11 @@ export function GalleryTileRow(props: GalleryTileRowProps) {
               let previewWidth: number;
               previewWidth = getWidthByRowType(screenWidth, props.tileRow.tileRowType);
               return (
-                <div
+                <GalleryPreview
+                  gallery={gallery}
+                  previewWidth={previewWidth}
                   key={gallery.uniqueId}
-                  className="gallery-preview-container">
-                  <GalleryTile
-                    gallery={gallery}
-                    imgWidth={previewWidth}
-                  />
-                </div>
+                />
               )
             })
           }

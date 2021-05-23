@@ -17,6 +17,7 @@ import {
 import { ScenicPage } from './pages/scenic-page/scenic-page';
 import { ArtPage } from './pages/art-page/art-page';
 import { AboutPage } from './pages/about-page/about-page';
+import { ScenicGallery } from './pages/scenic-page/scenic-gallery/scenic-gallery';
 
 export function App(props: any) {
   const onPageSelect = (pageItem: PAGE_ENUM) => {
@@ -40,7 +41,14 @@ export function App(props: any) {
             />
             </Route>
             <Route path={SCENIC_PAGE.route}>
-              <ScenicPage/>
+              <Switch>
+                <Route exact path={`${SCENIC_PAGE.route}`}>
+                  <ScenicPage/>
+                </Route>
+                <Route path={`${SCENIC_PAGE.route}/:galleryKey`}>
+                  <ScenicGallery/>
+                </Route>
+              </Switch>
             </Route>
             <Route path={ART_PAGE.route}>
               <ArtPage/>

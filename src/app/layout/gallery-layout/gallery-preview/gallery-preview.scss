@@ -1,0 +1,11 @@
+
+.gallery-preview {
+  opacity: 1;
+  transition-property: all;;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  &:hover {
+    opacity: 0.5;
+    // transform: rotate(270deg);
+  }
+}

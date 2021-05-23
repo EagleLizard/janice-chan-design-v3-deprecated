@@ -2,8 +2,8 @@
 import './gallery-tile.scss';
 import React from 'react';
 
-import { Gallery } from '../../../../../common/images/gallery';
-import { GalleryService } from '../../../../services/gallery-service';
+import { Gallery } from '../../../../common/images/gallery';
+import { GalleryService } from '../../../services/gallery-service';
 
 interface GalleryTileProps {
   gallery: Gallery;
