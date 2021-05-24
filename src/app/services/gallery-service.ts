@@ -114,7 +114,6 @@ export class GalleryService {
   }
 
   static getGalleryByRoute(galleryRoute: string) {
-    console.log(SCENIC_GALLERIES);
     return SCENIC_GALLERIES.find(scenicGallery => {
       return scenicGallery.route === galleryRoute;
     })
