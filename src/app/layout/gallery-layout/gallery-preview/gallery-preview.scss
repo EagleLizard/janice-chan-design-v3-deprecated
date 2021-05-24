@@ -1,11 +1,52 @@
 
+@import '../../../../global.scss';
+// $overlay-text-color: chartreuse;
+$overlay-text-color: #FFF;
+
 .gallery-preview {
-  opacity: 1;
-  transition-property: all;;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.3s;
-  &:hover {
-    opacity: 0.5;
-    // transform: rotate(270deg);
+  position: relative;
+  .preview-overlay {
+    .preview-overlay-base, .preview-overlay-text {
+      transition-property: all;
+      // transition-timing-function: ease-in-out;
+      transition-duration: 0.3s;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      min-width: 100%;
+      opacity: 0;
+    }
+    &:hover {
+      .preview-overlay-base{
+        opacity: 0.4;
+      }
+      .preview-overlay-text {
+        opacity: 1;
+      }
+    }
+    .preview-overlay-base {
+      // background-color: #FFF;
+      background-color: chartreuse;
+    }
+    .preview-overlay-text {
+      display: flex;
+      align-items: flex-end;
+      box-sizing: border-box;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      .overlay-text-content {
+        color: $overlay-text-color;
+        .overlay-title {
+          font-weight: bold;
+          font-size: $font-sm;
+        }
+        .overlay-credit {
+          font-size: $font-lg;
+        }
+      }
+    }
   }
 }

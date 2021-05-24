@@ -5,16 +5,9 @@ import _throttle from 'lodash.throttle';
 import _debounce from 'lodash.debounce';
 
 import { Page, PageScrollEvent } from '../../../common/page/page';
-import { SCENIC_GALLERY_KEYS } from '../../../common/images/gallery-constants';
-import { GALLERY_ENUM_MAP } from '../../../common/images/galleries';
-import { Gallery } from '../../../common/images/gallery';
-import { GalleryService } from '../../services/gallery-service';
+import { GalleryService, SCENIC_GALLERIES } from '../../services/gallery-service';
 import { TileRow } from '../../services/tile-row';
 import { GalleryTileRow } from '../../layout/gallery-layout/gallery-tile-row/gallery-tile-row';
-
-const SCENIC_GALLERIES: Gallery[] = SCENIC_GALLERY_KEYS.map(galleryKey => {
-  return GALLERY_ENUM_MAP[galleryKey];
-});
 
 interface ScenicPageProps {
 

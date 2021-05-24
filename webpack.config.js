@@ -35,6 +35,7 @@ module.exports = (env, argv) => {
     entry: './src/main.tsx',
     output: {
       path: DIST_DIR,
+      publicPath: '/',
       filename: 'bundle.js'
     },
     devtool: isDevelopment ? 'inline-source-map' : false,

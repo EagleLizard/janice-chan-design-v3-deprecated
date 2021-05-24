@@ -13,6 +13,8 @@ import {
   Switch,
   Route,
   Redirect,
+  useParams,
+  useRouteMatch,
 } from 'react-router-dom';
 import { ScenicPage } from './pages/scenic-page/scenic-page';
 import { ArtPage } from './pages/art-page/art-page';
@@ -41,14 +43,7 @@ export function App(props: any) {
             />
             </Route>
             <Route path={SCENIC_PAGE.route}>
-              <Switch>
-                <Route exact path={`${SCENIC_PAGE.route}`}>
-                  <ScenicPage/>
-                </Route>
-                <Route path={`${SCENIC_PAGE.route}/:galleryKey`}>
-                  <ScenicGallery/>
-                </Route>
-              </Switch>
+              <ScenicRoute/>
             </Route>
             <Route path={ART_PAGE.route}>
               <ArtPage/>
@@ -61,4 +56,18 @@ export function App(props: any) {
       </div>
     </Router>
   );
+}
+
+function ScenicRoute() {
+  const {path, url} = useRouteMatch();
+  return (
+    <Switch>
+      <Route exact path={`${path}`}>
+        <ScenicPage/>
+      </Route>
+      <Route path={`${path}/:galleryRoute`}>
+        <ScenicGallery/>
+      </Route>
+    </Switch>
+  )
 }

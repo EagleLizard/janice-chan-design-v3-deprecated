@@ -1,5 +1,5 @@
 
-import { GALLERY_ENUM } from '../../common/images/gallery-constants';
+import { GALLERY_ENUM, SCENIC_GALLERY_KEYS } from '../../common/images/gallery-constants';
 import {
   URINETOWN,
   TAMINGOFTHESHREW,
@@ -19,6 +19,11 @@ import {
 } from '../../common/images/image-uris';
 import { Gallery } from '../../common/images/gallery';
 import { TILE_ROW_TYPES, TileRow } from './tile-row';
+import { GALLERY_ENUM_MAP } from '../../common/images/galleries';
+
+export const SCENIC_GALLERIES: Gallery[] = SCENIC_GALLERY_KEYS.map(galleryKey => {
+  return GALLERY_ENUM_MAP[galleryKey];
+});
 
 let uniqueRowId: number = 1;
 
@@ -106,6 +111,13 @@ export class GalleryService {
 
   static getResizedImage(uri: string, width: number): string {
     return `${uri}?width=${width}`;
+  }
+
+  static getGalleryByRoute(galleryRoute: string) {
+    console.log(SCENIC_GALLERIES);
+    return SCENIC_GALLERIES.find(scenicGallery => {
+      return scenicGallery.route === galleryRoute;
+    })
   }
 }
 
