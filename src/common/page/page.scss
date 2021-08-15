@@ -5,5 +5,9 @@
   position: absolute;
   top: $nav-height;
   bottom: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  // right: 0;
+  // left: 0;
   overflow: auto;
 }

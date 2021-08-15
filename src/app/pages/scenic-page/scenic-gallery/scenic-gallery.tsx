@@ -4,6 +4,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Page } from '../../../../common/page/page';
 import { GalleryService } from '../../../services/gallery-service';
+import { GalleryHeading } from '../../../layout/gallery-layout/gallery-heading/gallery-heading';
 
 interface ScenicGalleryProps {
 
@@ -16,13 +17,10 @@ export function ScenicGallery(props: ScenicGalleryProps) {
   return (
     <Page>
       <div className="scenic-gallery">
-        <div>
-          <h1>
-            { gallery.title }
-          </h1>
-        </div>
-        <div>
-          {gallery.location}
+        <div className="scenic-gallery-title-section">
+          <GalleryHeading
+            gallery={gallery}
+          />
         </div>
       </div>
     </Page>
